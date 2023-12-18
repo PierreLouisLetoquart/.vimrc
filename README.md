@@ -2,9 +2,13 @@
 
 ![Banner Image](/img.png)
 
-Ultra minimalist config of [vim](https://www.vim.org/) using [vim-plug](https://github.com/junegunn/vim-plug) as pluggin manager.
+Minimalist config for [vim](https://www.vim.org/), using [vim-plug](https://github.com/junegunn/vim-plug) as a plugin manager.
 
-Only three plugins used :
+Three plugins are used :
 - [LSP](https://github.com/prabirshrestha/vim-lsp)
 - [LSP auto config](https://github.com/mattn/vim-lsp-settings)
 - [Colors](https://github.com/Alligator/accent.vim)
+
+Utils :
+- `:PlugInstall` to install plugin
+- `:LspInstallServer` to install lsp for current buffer
