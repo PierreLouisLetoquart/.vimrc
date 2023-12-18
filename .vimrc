@@ -1,6 +1,7 @@
-set number
-set mouse="a"
+let mapleader = " "        " Define the leader key
+let maplocalleader = ","   " Define the local leader key
 
+set number
 syntax on
 
 set tabstop=2
@@ -30,6 +31,7 @@ augroup END
 
 set ignorecase
 set smartcase
+set ai
 
 let g:accent_colour = 'red'
 let g:accent_no_bg = 1
@@ -43,12 +45,15 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
-vmap <C-y> "+y
-nmap <C-s> :w<CR>
-nmap <C-t> :terminal<CR>
-nmap <C-e> :Ex<CR>
-nnoremap c :!clang % -o %:r && ./%:r <CR>
-nnoremap ru :!rustc % -o %:r && %:r <CR>
+vmap <Leader>y "+y                                          " copy to system clipboard
+nmap <LocalLeader>s :w<CR>                                  " ctrl+s like
+nmap <Leader>t :terminal<CR>                                " open terminal in split view
+nmap <Leader>pv :Ex<CR>                                     " go to file tree
+nnoremap <Leader>i gg=G<C-o><C-o>                           " indent from gg to G
+nnoremap <LocalLeader>c :!clang % -o %:r && ./%:r <CR>      " compile + exec curr buffer (for C)
+nnoremap <LocalLeader>r :!rustc % -o %:r && %:r <CR>        " compile + exec curr buffer (for Rust)
+nnoremap <Leader>j 10j                                      " move 10 lines down
+nnoremap <Leader>k 10k                                      " move 10 lines up
 
 set laststatus=2
 set statusline=
