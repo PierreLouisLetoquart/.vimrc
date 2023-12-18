@@ -2,7 +2,7 @@
 
 ![Banner Image](/img.png)
 
-Minimalist config for [vim](https://www.vim.org/), using [vim-plug](https://github.com/junegunn/vim-plug) as a plugin manager.
+*Minimalist config for [vim](https://www.vim.org/), using [vim-plug](https://github.com/junegunn/vim-plug) as a plugin manager.*
 
 Three plugins are used :
 - [LSP](https://github.com/prabirshrestha/vim-lsp)
