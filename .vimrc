@@ -1,5 +1,5 @@
-" few basics
 set number
+set mouse="a"
 
 syntax on
 
@@ -7,16 +7,12 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-" pluggins using vim Plug
 call plug#begin()
-
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'alligator/accent.vim'
-
 call plug#end()
 
-" minimalist lsp config
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   nmap <buffer> gi <plug>(lsp-definition)
@@ -32,17 +28,13 @@ augroup lsp_install
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-" few basics
 set ignorecase
 set smartcase
 
-" color scheme
 let g:accent_colour = 'red'
 let g:accent_no_bg = 1
-
 colorscheme accent
 
-" vanilla autoclose brackets
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
@@ -51,10 +43,16 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
-" basic keymaps
 vmap <C-y> "+y
 nmap <C-s> :w<CR>
 nmap <C-t> :terminal<CR>
 nmap <C-e> :Ex<CR>
 nnoremap c :!clang % -o %:r && ./%:r <CR>
-nnoremap r :!rustc % -o %:r && %:r <CR>
+nnoremap ru :!rustc % -o %:r && %:r <CR>
+
+set laststatus=2
+set statusline=
+set statusline+=\ %f%y                      " file name [ file type ]
+set statusline+=%=                          " switch right side
+set statusline+=\ Porn\ folder:\ 6.9Gb\ -\  " cool stat (idea from Tsoding)
+set statusline+=%l/%L\                      " actual line / total lines
