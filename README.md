@@ -1,5 +1,7 @@
 # .vimrc
 
+![Banner Image](/img.png)
+
 Ultra minimalist config of [vim](https://www.vim.org/) using [vim-plug](https://github.com/junegunn/vim-plug) as pluggin manager.
 
 Only three plugins used :
